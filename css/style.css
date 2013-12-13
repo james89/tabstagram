@@ -1,0 +1,6 @@
+.item {
+  border: 2px solid;
+  width: 250px;
+  height: 250px;
+  float: left;
+}
