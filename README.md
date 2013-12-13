@@ -16,8 +16,8 @@ As a user, I can change my feed preferences to include custom hashtags as well i
 
 ###Phases###
 1. Pull just the feed and display in masonry layout
-  *Implement user authentication (using just client-side auth process, refer to Instagram API docs)
-  *Successfully retrieve user feed image data through Instagram API and append it to a page
+  * Implement user authentication (using just client-side auth process, refer to Instagram API docs)
+  * Successfully retrieve user feed image data through Instagram API and append it to a page
 
 2. Pull custom hashtag images and display in masonry layout
   * retrieve images under multiple specific hashtags
