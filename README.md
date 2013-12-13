@@ -1,4 +1,4 @@
-tabstagram
+Tabstagram for Chrome
 ==========
 
 ###Overview###

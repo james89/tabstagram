@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "Tabstagram",
+
+  "permissions": [
+    "tabs",
+    "identity",
+    "https://api.instagram.com/*"
+  ],
+
+  "background": {
+      "scripts": ["main.js"]
+    },
+
+  "chrome_url_overrides": {
+    "pageToOverride": "myPage.html"
+  }
+
+}
