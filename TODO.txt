@@ -1,0 +1,3 @@
+
+
+redirect user to instagram authorization page once they click button (landingevent.js, landing.html)
