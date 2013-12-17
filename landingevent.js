@@ -1,6 +1,6 @@
 window.onload = function() {
   var login = document.getElementById("login");
-  var output = document.getElementById("output");
+  var output = document.getElementById("container");
 
   login.onclick = function() {
 
@@ -19,23 +19,33 @@ window.onload = function() {
       var accessToken = responseUrl.substring(responseUrl.indexOf("=") + 1);
       var api = new InstagramAPI(accessToken);
       localStorage.setItem("access_token", accessToken);
-      api.request("users/self/feed", undefined, function(data) {
-        console.log(data);
-
-        output.textContent = JSON.stringify(data, null, 4);
+      api.request("users/self/feed")
+      .done(function(response) {
+        for (var i = 0; i < response.data.length; i++) {
+          var instagramPost = response.data[i];
+          var imgURL = instagramPost.images.standard_resolution.url;
+          var $itemContainer = $('<div class="item">');
+          $itemContainer.append('<img src="' + imgURL + '">');
+          $(output).append($itemContainer);
+        }
+        $('#container').imagesLoaded( function(){
+          loadIsotope();
+        });
+      })
+      .error(function(response){
+        console.log(response);
       });
     });
   };
 };
 
-function InstagramAPI(accessToken) {
-  this.request = function(method, args, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-      callback(JSON.parse(xhr.response));
-    };
 
-    xhr.open("GET", "https://api.instagram.com/v1/" + method + "?access_token=" + accessToken);
-    xhr.send();
+
+function InstagramAPI(accessToken) {
+  this.request = function (method){
+    return $.ajax({
+      url: 'https://api.instagram.com/v1/' + method + "?access_token=" + accessToken,
+      type: 'GET'
+    });
   };
 }
