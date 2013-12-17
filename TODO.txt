@@ -1,3 +1,8 @@
 
 
-redirect user to instagram authorization page once they click button (landingevent.js, landing.html)
+
+Follow Tabs app method!!!! - they use a dummy (but live) URL to handle the access token retrieval (for the URI redirect). When the user first authenticates, it sends them to the dummy URL but before the page fully loads, a script is loaded to record the auth_token numbers (but how is it stored in the app after that?, get help from phil to reverse engineer how they do this)
+
+https://github.com/michaelsacca/tabs/blob/master/js/background.js
+https://github.com/michaelsacca/tabs/blob/master/js/redirect.js
+https://github.com/michaelsacca/tabs/blob/master/manifest.json

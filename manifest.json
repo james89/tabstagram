@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Tabstagram",
-  "version": "1.0.1",
+  "version": "1.0.2  ",
 
   "permissions": [
     "tabs",
@@ -11,33 +11,7 @@
     "https://api.instagram.com/*"
   ],
 
-
-  "background": {
-      "scripts": [
-        "javascripts/jquery-2.0.3.js",
-        "javascripts/jquery.isotope.js",
-        "javascripts/underscore.js",
-        "javascripts/backbone.js",
-        "extensioninstall.js"
-      ]
-    },
-
-
-"web_accessible_resources": [
-    "images/image1.png",
-    "script/myscript.js"
-  ],
-
-
-  "browser_action": {
-    "default_icon": "images/ig.png",
-    "default_title": "Tabstagram",
-    "default_popup": "landing.html"
-  },
-
-
   "options_page": "options.html",
-
 
   "chrome_url_overrides": {
     "newtab": "index.html"
